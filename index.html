@@ -11,13 +11,13 @@
             background: #1a1a1a; 
             color: #f0f0f0; 
             margin: 0;
-            padding: 20px;
+            padding: 15px;
         }
         .container { 
-            max-width: 700px; 
+            max-width: 780px; 
             margin: auto; 
             background: #2a2a2a; 
-            padding: 25px; 
+            padding: 20px; 
             border-radius: 8px; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.8); 
             border: 2px solid #d32f2f; 
@@ -32,158 +32,201 @@
         .subtitle {
             text-align: center;
             color: #aaa;
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 13px;
+            margin-bottom: 15px;
         }
         /* 時鐘面板 */
         .timer-panel {
             background: #111;
             border: 1px solid #444;
             border-radius: 6px;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 12px;
+            margin-bottom: 15px;
             text-align: center;
         }
         .clock-display {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             color: #ffb74d;
             font-family: monospace;
-            margin: 10px 0;
+            margin: 6px 0;
             text-shadow: 0 0 10px rgba(255, 183, 77, 0.5);
         }
         .timer-controls {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 10px;
+            margin-top: 8px;
+            flex-wrap: wrap;
         }
         .time-input {
             background: #1e1e1e;
             color: white;
             border: 1px solid #555;
-            padding: 8px;
+            padding: 6px;
             border-radius: 4px;
-            font-size: 16px;
+            font-size: 15px;
         }
         .btn-game-start {
             background: #4caf50;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 8px 16px;
+            font-size: 15px;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
             transition: 0.3s;
         }
-        .btn-game-start.active {
-            background: #d32f2f;
-        }
+        .btn-game-start.active { background: #d32f2f; }
         
-        .input-group { 
-            margin-bottom: 15px; 
-        }
+        .input-group { margin-bottom: 12px; }
         label { 
             display: block; 
-            margin-bottom: 5px; 
+            margin-bottom: 4px; 
             font-weight: bold; 
             color: #ccc;
+            font-size: 14px;
         }
         input[type="text"] { 
             width: 100%; 
-            padding: 12px; 
+            padding: 10px; 
             box-sizing: border-box; 
             border: 1px solid #555; 
             background: #1e1e1e; 
             color: white; 
             border-radius: 4px; 
-            font-size: 16px;
+            font-size: 15px;
         }
         input[type="text"]:focus {
             outline: none;
             border-color: #ff5252;
         }
 
-        /* 快捷事件按鈕區域 */
-        .event-chips {
+        /* 快捷按鈕區域 */
+        .chips-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
+            gap: 6px;
+            margin-top: 6px;
         }
         .chip-btn {
             background: #3a3a3a;
             color: #ffb74d;
             border: 1px solid #ffb74d;
-            padding: 6px 12px;
-            border-radius: 16px;
-            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 14px;
+            font-size: 13px;
             cursor: pointer;
             transition: 0.2s;
         }
-        .chip-btn:hover {
+        .chip-btn:hover, .chip-btn:active {
             background: #ffb74d;
             color: #111;
             font-weight: bold;
         }
+        .chip-btn.loc-btn {
+            color: #81d4fa;
+            border-color: #81d4fa;
+        }
+        .chip-btn.loc-btn:hover, .chip-btn.loc-btn:active {
+            background: #81d4fa;
+            color: #111;
+        }
 
         .btn-mark { 
             width: 100%; 
-            padding: 15px; 
+            padding: 12px; 
             background: #d32f2f; 
             color: white; 
             border: none; 
-            font-size: 18px; 
+            font-size: 17px; 
             font-weight: bold; 
             border-radius: 4px; 
             cursor: pointer; 
             transition: 0.3s; 
-            margin-top: 10px;
+            margin-top: 8px;
         }
         .btn-mark:hover { background: #b71c1c; }
         .btn-mark:disabled { background: #555; cursor: not-allowed; color: #888; }
         
         table { 
             width: 100%; 
-            margin-top: 25px; 
+            margin-top: 20px; 
             border-collapse: collapse; 
         }
         th, td { 
-            padding: 10px; 
+            padding: 8px; 
             border: 1px solid #444; 
             text-align: left; 
+            font-size: 14px;
         }
         th { background: #d32f2f; color: white; }
         tr:nth-child(even) { background: #333; }
         tr:nth-child(odd) { background: #2a2a2a; }
+
+        /* 表格內可編輯的地點框 */
+        .row-where-input {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid #555;
+            color: #81d4fa;
+            padding: 6px 8px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .row-where-input:focus {
+            outline: none;
+            border-color: #81d4fa;
+            background: #111;
+        }
+
+        /* 表格內可編輯的備註框 */
+        .row-note-input {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid #555;
+            color: #ffeb3b;
+            padding: 6px 8px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .row-note-input:focus {
+            outline: none;
+            border-color: #ff5252;
+            background: #111;
+        }
+
         .delete-btn { 
-            background: #555; color: white; padding: 6px 10px; 
-            border: none; cursor: pointer; border-radius: 3px; font-size: 14px;
+            background: #555; color: white; padding: 5px 8px; 
+            border: none; cursor: pointer; border-radius: 3px; font-size: 12px;
         }
         .delete-btn:hover { background: #ff5252; }
         .empty-msg { text-align: center; color: #777; margin-top: 20px; font-style: italic; }
-        .real-time-sub { font-size: 11px; color: #888; display: block; margin-top: 4px; }
+        .real-time-sub { font-size: 11px; color: #888; display: block; margin-top: 2px; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>血染的紀錄簿</h1>
-        <div class="subtitle">(現實時間 1秒 = 遊戲時間 1.2分鐘)</div>
+        <div class="subtitle">(現實 1秒 = 遊戲 1.2分鐘)</div>
         
         <!-- 遊戲時間控制面板 -->
         <div class="timer-panel">
-            <div style="color: #ccc; font-weight: bold;">【目前遊戲內時間】</div>
+            <div style="color: #ccc; font-weight: bold; font-size: 14px;">【目前遊戲時間】</div>
             <div class="clock-display" id="inGameClock">Day 1 - 08:00</div>
             
             <div class="timer-controls">
                 <div>
-                    <label style="display:inline; font-size:14px;">初始時間:</label>
+                    <label style="display:inline; font-size:13px;">開局時間:</label>
                     <input type="time" id="startTimeInput" class="time-input" value="08:00">
                 </div>
-                <button id="toggleTimerBtn" class="btn-game-start" onclick="toggleGameTimer()">▶ 開始遊戲 / 計算時間</button>
+                <button id="toggleTimerBtn" class="btn-game-start" onclick="toggleGameTimer()">▶ 開始遊戲</button>
             </div>
         </div>
 
@@ -191,22 +234,32 @@
             <label for="who">看到誰 (Who):</label>
             <input type="text" id="who" placeholder="例：苗木誠 / 玩家 ID" autocomplete="off" />
         </div>
+
+        <!-- 地點選單 -->
         <div class="input-group">
             <label for="where">在哪裡 (Where):</label>
-            <input type="text" id="where" placeholder="例：餐廳 / 體育館" autocomplete="off" />
+            <input type="text" id="where" placeholder="可點選下方樓層，紀錄後亦可於表格中自由修改" autocomplete="off" />
+            <div class="chips-group">
+                <button class="chip-btn loc-btn" onclick="selectWhere('1樓')">🏢 1樓</button>
+                <button class="chip-btn loc-btn" onclick="selectWhere('2樓')">🏢 2樓</button>
+                <button class="chip-btn loc-btn" onclick="selectWhere('3樓')">🏢 3樓</button>
+                <button class="chip-btn loc-btn" onclick="selectWhere('4樓')">🏢 4樓</button>
+                <button class="chip-btn loc-btn" onclick="selectWhere('5樓')">🏢 5樓</button>
+                <button class="chip-btn loc-btn" onclick="selectWhere('餐廳')">🍽️ 餐廳</button>
+                <button class="chip-btn loc-btn" onclick="selectWhere('體育館')">🏀 體育館</button>
+            </div>
         </div>
+
+        <!-- 事件快捷選單 -->
         <div class="input-group">
-            <label for="event">發生什麼事 / 備註 (Event):</label>
-            <input type="text" id="event" placeholder="可直接點擊下方快捷按鈕，或手動輸入" autocomplete="off" />
-            
-            <!-- 隨機事件/動作快捷選單 -->
-            <div class="event-chips">
-                <button class="chip-btn" onclick="selectEvent('化裝舞會')">🎭 化裝舞會</button>
-                <button class="chip-btn" onclick="selectEvent('停電')">⚡ 停電</button>
-                <button class="chip-btn" onclick="selectEvent('傳送')">🌀 傳送</button>
-                <button class="chip-btn" onclick="selectEvent('經過')">🚶 經過</button>
-                <button class="chip-btn" onclick="selectEvent('可疑舉動')">👀 可疑舉動</button>
-                <button class="chip-btn" onclick="selectEvent('聽到聲音')">🔊 聽到聲音</button>
+            <label for="event">預設事件 / 備註 (Event):</label>
+            <input type="text" id="event" placeholder="可選填，紀錄後於表格中仍可自由打字修改" autocomplete="off" />
+            <div class="chips-group">
+                <button class="chip-btn" onclick="selectEvent('🎭 化裝舞會')">🎭 化裝舞會</button>
+                <button class="chip-btn" onclick="selectEvent('⚡ 停電')">⚡ 停電</button>
+                <button class="chip-btn" onclick="selectEvent('🌀 傳送')">🌀 傳送</button>
+                <button class="chip-btn" onclick="selectEvent('🚶 經過')">🚶 經過</button>
+                <button class="chip-btn" onclick="selectEvent('👀 可疑')">👀 可疑</button>
             </div>
         </div>
         
@@ -215,11 +268,11 @@
         <table id="logTable">
             <thead>
                 <tr>
-                    <th style="width: 22%;">遊戲時間 (When)</th>
-                    <th style="width: 18%;">人物 (Who)</th>
-                    <th style="width: 20%;">地點 (Where)</th>
-                    <th style="width: 25%;">備註 (Event)</th>
-                    <th style="width: 15%;">操作</th>
+                    <th style="width: 22%;">時間 (When)</th>
+                    <th style="width: 16%;">人物 (Who)</th>
+                    <th style="width: 24%;">地點 (可編輯)</th>
+                    <th style="width: 28%;">備註 (可編輯)</th>
+                    <th style="width: 10%;">操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -230,17 +283,26 @@
     </div>
 
     <script>
-        // 時間相關變數
         let isGameRunning = false;
-        let realStartTimestamp = 0; // 現實開始時間 (ms)
-        let inGameStartMinutes = 0; // 遊戲開始的總分鐘數
+        let realStartTimestamp = 0;
+        let inGameStartMinutes = 0;
         let clockInterval = null;
-        let currentInGameString = "Day 1 - 08:00"; // 儲存當下遊戲時間字串
+        let currentInGameString = "Day 1 - 08:00";
 
-        // 點擊快捷事件按鈕
+        // 點擊地點快捷按鈕
+        function selectWhere(locName) {
+            const whereInput = document.getElementById('where');
+            if (whereInput.value.trim() !== '') {
+                whereInput.value += ' ' + locName;
+            } else {
+                whereInput.value = locName;
+            }
+            whereInput.focus();
+        }
+
+        // 點擊事件快捷按鈕
         function selectEvent(eventName) {
             const eventInput = document.getElementById('event');
-            // 如果原本有字，加個逗號分開；如果冇字，直接填入
             if (eventInput.value.trim() !== '') {
                 eventInput.value += ', ' + eventName;
             } else {
@@ -249,70 +311,55 @@
             eventInput.focus();
         }
 
-        // 將 hh:mm 轉換為總分鐘數 (例如 08:00 = 480)
         function timeToMinutes(timeStr) {
             const [hours, minutes] = timeStr.split(':').map(Number);
             return (hours * 60) + minutes;
         }
 
-        // 將總分鐘數轉換為 Day X - HH:MM
         function minutesToGameTimeStr(totalMins) {
-            const days = Math.floor(totalMins / (24 * 60)) + 1; // 1日開始
+            const days = Math.floor(totalMins / (24 * 60)) + 1;
             const remainingMins = Math.floor(totalMins % (24 * 60));
             const hours = Math.floor(remainingMins / 60).toString().padStart(2, '0');
             const mins = (remainingMins % 60).toString().padStart(2, '0');
             return `Day ${days} - ${hours}:${mins}`;
         }
 
-        // 更新時鐘
         function updateClock() {
             if (!isGameRunning) return;
-            
-            // 計算過了幾多現實秒數
             const now = Date.now();
             const elapsedRealSeconds = (now - realStartTimestamp) / 1000;
-            
-            // 根據規則: 現實 1 秒 = 遊戲 1.2 分鐘
             const elapsedGameMinutes = elapsedRealSeconds * 1.2;
-            
-            // 總遊戲分鐘數 = 初始時間 + 經過時間
             const currentTotalGameMinutes = inGameStartMinutes + elapsedGameMinutes;
-            
-            // 更新 UI 和全域變數
             currentInGameString = minutesToGameTimeStr(currentTotalGameMinutes);
             document.getElementById('inGameClock').innerText = currentInGameString;
         }
 
-        // 開始 / 停止計時器
         function toggleGameTimer() {
             const btn = document.getElementById('toggleTimerBtn');
             const markBtn = document.getElementById('markBtn');
             const timeInput = document.getElementById('startTimeInput');
 
             if (!isGameRunning) {
-                // 開始遊戲
                 isGameRunning = true;
                 realStartTimestamp = Date.now();
                 inGameStartMinutes = timeToMinutes(timeInput.value);
                 
-                timeInput.disabled = true; // 鎖定輸入框
-                btn.innerHTML = "⏹ 停止並重置";
+                timeInput.disabled = true;
+                btn.innerHTML = "⏹ 重置";
                 btn.classList.add('active');
                 
                 markBtn.disabled = false;
                 markBtn.innerHTML = "📝 記錄 (Mark!)";
                 
-                // 啟動時鐘，每秒更新
                 clockInterval = setInterval(updateClock, 1000);
-                updateClock(); // 即時執行一次
+                updateClock();
             } else {
-                // 停止遊戲 (重置)
-                if(confirm("確定要停止並重置時鐘嗎？這通常在開啟新一局遊戲時使用。")) {
+                if(confirm("確定要重置時鐘嗎？")) {
                     isGameRunning = false;
                     clearInterval(clockInterval);
                     
                     timeInput.disabled = false;
-                    btn.innerHTML = "▶ 開始遊戲 / 計算時間";
+                    btn.innerHTML = "▶ 開始遊戲";
                     btn.classList.remove('active');
                     
                     document.getElementById('inGameClock').innerText = `Day 1 - ${timeInput.value}`;
@@ -333,10 +380,9 @@
             const eventInput = document.getElementById('event');
             
             const who = whoInput.value.trim() || '不明';
-            const where = whereInput.value.trim() || '不明';
-            const event = eventInput.value.trim() || '-';
+            const whereValue = whereInput.value.trim();
+            const eventValue = eventInput.value.trim();
             
-            // 取得現實時間 (作為小字參考用)
             const realNow = new Date();
             const realTimeString = realNow.getHours().toString().padStart(2, '0') + ':' + 
                                  realNow.getMinutes().toString().padStart(2, '0') + ':' + 
@@ -345,24 +391,26 @@
             const tbody = document.querySelector('#logTable tbody');
             const row = document.createElement('tr');
             
-            // 建立表格內容
+            // 地點與備註欄皆改為可自由輸入與修改的 <input> 框
             row.innerHTML = `
                 <td>
                     <span style="font-weight:bold; color:#ffb74d;">${currentInGameString}</span>
                     <span class="real-time-sub">(現實: ${realTimeString})</span>
                 </td>
                 <td style="font-weight:bold;">${who}</td>
-                <td>${where}</td>
-                <td>${event}</td>
+                <td>
+                    <input type="text" class="row-where-input" value="${whereValue}" placeholder="地點..." />
+                </td>
+                <td>
+                    <input type="text" class="row-note-input" value="${eventValue}" placeholder="備註..." />
+                </td>
                 <td><button class="delete-btn" onclick="deleteRow(this)">刪除</button></td>
             `;
             
-            // 最新的記錄置頂
             tbody.insertBefore(row, tbody.firstChild);
-            
             document.getElementById('emptyMsg').style.display = 'none';
             
-            // 清空輸入框
+            // 清空頂部輸入框
             whoInput.value = '';
             whereInput.value = '';
             eventInput.value = '';
@@ -379,16 +427,17 @@
             }
         }
         
-        // 按 Enter 鍵自動記錄
         document.addEventListener('keypress', function(e) {
             if (e.key === 'Enter' && isGameRunning) {
-                if(document.activeElement.id !== 'startTimeInput') {
+                // 如果光標在表格內的輸入框，按 Enter 不會重複新增紀錄
+                if (document.activeElement.classList.contains('row-note-input') || 
+                    document.activeElement.classList.contains('row-where-input')) return;
+                if (document.activeElement.id !== 'startTimeInput') {
                     markEvent();
                 }
             }
         });
         
-        // 網頁載入時更新一次預設顯示
         document.getElementById('inGameClock').innerText = `Day 1 - ${document.getElementById('startTimeInput').value}`;
     </script>
 </body>
